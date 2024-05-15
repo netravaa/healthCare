@@ -1,24 +1,39 @@
 package com.example.myhealthapplication;
 
-import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class OtherDetailsActivity extends AppCompatActivity {
+
+    private Button btnClearUserData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_other_details);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        btnClearUserData = findViewById(R.id.btn_clear_user_data);
+
+        btnClearUserData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearUserData();
+            }
         });
+    }
+
+    private void clearUserData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyAppointments", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+        Intent intent = new Intent(OtherDetailsActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

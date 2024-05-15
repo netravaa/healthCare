@@ -39,7 +39,6 @@
         android:layout_below="@id/textViewCategories"
         android:orientation="vertical">
 
-        <!-- Кнопки для различных категорий врачей -->
         <Button
             android:id="@+id/buttonTherapist"
             android:layout_width="match_parent"

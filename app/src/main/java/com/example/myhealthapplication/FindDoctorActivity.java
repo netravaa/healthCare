@@ -7,7 +7,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FindDoctorActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,12 +18,11 @@ public class FindDoctorActivity extends AppCompatActivity {
         Button buttonOphthalmologist = findViewById(R.id.buttonOphthalmologist);
         Button buttonSurgeons = findViewById(R.id.buttonSurgeons);
         Button buttonDoctorAppointments = findViewById(R.id.buttonMyAppointments);
-
         buttonTherapist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Переход к активности с терапевтами
-                Intent intent = new Intent(FindDoctorActivity.this, TerapevtActivity.class);
+                Intent intent = new Intent(FindDoctorActivity.this, DoctorActivity.class);
+                intent.putExtra("doctorType", "Терапевт");
                 startActivity(intent);
             }
         });
@@ -32,32 +30,32 @@ public class FindDoctorActivity extends AppCompatActivity {
         buttonGeneralPractitioner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Переход к активности с участковыми
-                Intent intent = new Intent(FindDoctorActivity.this, GeneralPractitionerActivity.class);
+                Intent intent = new Intent(FindDoctorActivity.this, DoctorActivity.class);
+                intent.putExtra("doctorType", "Участковый врач");
                 startActivity(intent);
             }
         });
         buttonEndocrinologist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Переход к активности с участковыми
-                Intent intent = new Intent(FindDoctorActivity.this, EndocrinologistActivity.class);
+                Intent intent = new Intent(FindDoctorActivity.this, DoctorActivity.class);
+                intent.putExtra("doctorType", "Эндокринолог");
                 startActivity(intent);
             }
         });
         buttonOphthalmologist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Переход к активности с участковыми
-                Intent intent = new Intent(FindDoctorActivity.this, OphtalmologistActivity.class);
+                Intent intent = new Intent(FindDoctorActivity.this, DoctorActivity.class);
+                intent.putExtra("doctorType", "Офтальмолог");
                 startActivity(intent);
             }
         });
         buttonSurgeons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Переход к активности с участковыми
-                Intent intent = new Intent(FindDoctorActivity.this, SurgeonActivity.class);
+                Intent intent = new Intent(FindDoctorActivity.this, DoctorActivity.class);
+                intent.putExtra("doctorType", "Хирург");
                 startActivity(intent);
             }
         });
@@ -65,7 +63,6 @@ public class FindDoctorActivity extends AppCompatActivity {
         buttonDoctorAppointments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Переход к активности с записями пользователя
                 Intent intent = new Intent(FindDoctorActivity.this, DoctorAppointments.class);
                 startActivity(intent);
             }

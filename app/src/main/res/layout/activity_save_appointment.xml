@@ -1,6 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<!-- activity_save_appointment.xml -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SaveAppointmentActivity">
+
+    <TextView
+        android:id="@+id/tv_doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:text="Имя врача" />
+
+    <TextView
+        android:id="@+id/tv_appointment_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_below="@id/tv_doctor_name"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:text="Выберите время приема" />
+
+    <Button
+        android:id="@+id/btn_select_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выбрать время"
+        android:layout_below="@id/tv_appointment_time"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_save_appointment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сохранить запись"
+        android:layout_below="@id/btn_select_time"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:padding="16dp" />
+
+</RelativeLayout>
