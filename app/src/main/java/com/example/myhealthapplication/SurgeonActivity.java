@@ -14,33 +14,35 @@ import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class TerapevtActivity extends AppCompatActivity {
+public class SurgeonActivity extends AppCompatActivity {
 
-    ListView terapevtListView;
+    ListView SurgeonListView;
     Button buttonBookAppointment;
     Calendar appointmentDateTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_terapevt);
+        setContentView(R.layout.activity_surgeon);
 
-        terapevtListView = findViewById(R.id.terapevtListView);
+        SurgeonListView = findViewById(R.id.SurgeonListView);
         buttonBookAppointment = findViewById(R.id.buttonBookAppointment);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, getTerapevtList());
-        terapevtListView.setAdapter(adapter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, getSurgeonList());
+        SurgeonListView.setAdapter(adapter);
 
-        terapevtListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        SurgeonListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedTerapevt = getTerapevtList()[position];
-                Toast.makeText(TerapevtActivity.this, "Выбран врач: " + selectedTerapevt, Toast.LENGTH_SHORT).show();
+                String selectedSurgeon = getSurgeonList()[position];
+                Toast.makeText(SurgeonActivity.this, "Выбран врач: " + selectedSurgeon, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -67,7 +69,7 @@ public class TerapevtActivity extends AppCompatActivity {
                         appointmentDateTime = Calendar.getInstance();
                         appointmentDateTime.set(year, monthOfYear, dayOfMonth);
 
-                        TimePickerDialog timePickerDialog = new TimePickerDialog(TerapevtActivity.this,
+                        TimePickerDialog timePickerDialog = new TimePickerDialog(SurgeonActivity.this,
                                 new TimePickerDialog.OnTimeSetListener() {
                                     @Override
                                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -75,16 +77,15 @@ public class TerapevtActivity extends AppCompatActivity {
                                         appointmentDateTime.set(Calendar.MINUTE, minute);
 
                                         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault());
-                                        Toast.makeText(TerapevtActivity.this,
+                                        Toast.makeText(SurgeonActivity.this,
                                                 "Выбранная дата и время: " + sdf.format(appointmentDateTime.getTime()),
                                                 Toast.LENGTH_LONG).show();
 
                                         SharedPreferences sharedPreferences = getSharedPreferences("MyAppointments", Context.MODE_PRIVATE);
                                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                                        editor.putString("appointmentInfo", "Терапевт " + sdf.format(appointmentDateTime.getTime()));
+                                        editor.putString("appointmentInfo", "Хирург " + sdf.format(appointmentDateTime.getTime()));
                                         editor.apply();
-
-                                        Intent intent = new Intent(TerapevtActivity.this, HomeActivity.class);
+                                        Intent intent = new Intent(SurgeonActivity.this, HomeActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
                                         finish();
@@ -97,13 +98,13 @@ public class TerapevtActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    private String[] getTerapevtList() {
+    private String[] getSurgeonList() {
         return new String[]{
-                "Терапевт Иванов, 10 лет опыта",
-                "Терапевт Петров, 8 лет опыта",
-                "Терапевт Сидоров, 7 лет опыта",
-                "Терапевт Васильев, 6 лет опыта",
-                "Терапевт Смирнова, 5 лет опыта"
+                "Хирург Янчев, 10 лет опыта",
+                "Хирург Яковлев, 8 лет опыта",
+                "Хирург Иванов, 7 лет опыта",
+                "Хирург Щелкунов, 6 лет опыта",
+                "Хирург Наумов, 5 лет опыта"
         };
     }
 }

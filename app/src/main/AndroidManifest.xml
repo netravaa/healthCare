@@ -13,13 +13,22 @@
         android:theme="@style/Theme.MyHealthApplication"
         tools:targetApi="31">
         <activity
-            android:name=".GeneralPractitioner"
+            android:name=".GeneralPractitionerActivity"
             android:exported="false" />
         <activity
             android:name=".DoctorAppointments"
             android:exported="false" />
         <activity
             android:name=".TerapevtActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EndocrinologistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OphtalmologistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SurgeonActivity"
             android:exported="false" />
         <activity
             android:name=".RecipesActivity"

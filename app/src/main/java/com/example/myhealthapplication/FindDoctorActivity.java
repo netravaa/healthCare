@@ -17,6 +17,7 @@ public class FindDoctorActivity extends AppCompatActivity {
         Button buttonGeneralPractitioner = findViewById(R.id.buttonGeneralPractitioner);
         Button buttonEndocrinologist = findViewById(R.id.buttonEndocrinologist);
         Button buttonOphthalmologist = findViewById(R.id.buttonOphthalmologist);
+        Button buttonSurgeons = findViewById(R.id.buttonSurgeons);
         Button buttonDoctorAppointments = findViewById(R.id.buttonMyAppointments);
 
         buttonTherapist.setOnClickListener(new View.OnClickListener() {
@@ -31,8 +32,32 @@ public class FindDoctorActivity extends AppCompatActivity {
         buttonGeneralPractitioner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Переход к активности с терапевтами
-                Intent intent = new Intent(FindDoctorActivity.this, GeneralPractitioner.class);
+                // Переход к активности с участковыми
+                Intent intent = new Intent(FindDoctorActivity.this, GeneralPractitionerActivity.class);
+                startActivity(intent);
+            }
+        });
+        buttonEndocrinologist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переход к активности с участковыми
+                Intent intent = new Intent(FindDoctorActivity.this, EndocrinologistActivity.class);
+                startActivity(intent);
+            }
+        });
+        buttonOphthalmologist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переход к активности с участковыми
+                Intent intent = new Intent(FindDoctorActivity.this, OphtalmologistActivity.class);
+                startActivity(intent);
+            }
+        });
+        buttonSurgeons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переход к активности с участковыми
+                Intent intent = new Intent(FindDoctorActivity.this, SurgeonActivity.class);
                 startActivity(intent);
             }
         });
