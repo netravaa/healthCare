@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText edUsername, edPassword, edConfirm, edEmail;
+    EditText edPassword, edConfirm, edEmail;
     Button btn;
     TextView tv;
 
@@ -21,7 +21,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        edUsername = findViewById(R.id.editTextRegUsername);
         edPassword = findViewById(R.id.editTextRegPassword);
         edEmail = findViewById(R.id.editTextEmail);
         edConfirm = findViewById(R.id.editTextPasswordConfirm);
@@ -38,13 +37,12 @@ public class RegisterActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = edUsername.getText().toString();
                 String email = edEmail.getText().toString();
                 String password = edPassword.getText().toString();
                 String confirm = edConfirm.getText().toString();
                 Database db = new Database();
 
-                if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
+                if (email.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Заполните все пункты", Toast.LENGTH_SHORT).show();
                 } else {
                     if (password.compareTo(confirm) == 0) {
