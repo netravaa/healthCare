@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +15,6 @@ import java.util.List;
 public class DoctorActivity extends AppCompatActivity {
 
     ListView doctorListView;
-    Button buttonBookAppointment;
     String  doctorType;
 
     private static final List<String> therapistList = new ArrayList<>();
@@ -52,7 +50,6 @@ public class DoctorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doctor);
 
         doctorListView = findViewById(R.id.doctorListView);
-        buttonBookAppointment = findViewById(R.id.buttonBookAppointment);
 
         doctorType = getIntent().getStringExtra("doctorType");
 

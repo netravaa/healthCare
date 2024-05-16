@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back2"
+    android:background="@color/white"
     tools:context=".HomeActivity">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HealthCare"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
@@ -28,20 +28,20 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardRecipes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_row="0"
             android:layout_column="0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            app:cardBackgroundColor="@color/teal_200"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/light_gray"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -55,8 +55,8 @@
                     android:layout_height="wrap_content"
                     android:text="Рецепты"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
                     android:textStyle="bold">
                 </TextView>
             </LinearLayout>
@@ -64,20 +64,20 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardFindDoctor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_row="0"
             android:layout_column="1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            app:cardBackgroundColor="@color/teal_200"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/light_gray"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -91,8 +91,8 @@
                     android:layout_height="wrap_content"
                     android:text="Поиск врача"
                     android:textAlignment="center"
-                    android:textSize="20dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
                     android:textStyle="bold">
                 </TextView>
             </LinearLayout>
@@ -100,20 +100,20 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardOtherDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_row="1"
             android:layout_column="0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            app:cardBackgroundColor="@color/teal_200"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/light_gray"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -125,10 +125,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Другие детали"
+                    android:text="Прочее"
                     android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
                     android:textStyle="bold">
                 </TextView>
             </LinearLayout>
@@ -137,22 +137,22 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardExit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_row="1"
             android:layout_column="1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            app:cardBackgroundColor="@color/teal_200"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/light_gray"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
             app:cardUseCompatPadding="true"
             android:layout_gravity="fill"
             >
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -166,9 +166,9 @@
                     android:layout_height="wrap_content"
                     android:text="Выход"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="20dp">
+                    android:textSize="18sp">
                 </TextView>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

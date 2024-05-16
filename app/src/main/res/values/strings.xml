@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyHealthApplication</string>
+    <string name="app_name">HealthCare</string>
     <string name="title_activity_register">RegisterActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -43,4 +43,11 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="select_doctor_category">Выберите категорию врачей:</string>
+    <string name="therapist">Терапевт</string>
+    <string name="general_practitioner">Участковый врач</string>
+    <string name="endocrinologist">Эндокринолог</string>
+    <string name="ophthalmologist">Офтальмолог</string>
+    <string name="surgeons">Хирург</string>
+    <string name="my_appointments">Мои записи</string>
 </resources>

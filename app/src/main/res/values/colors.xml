@@ -11,4 +11,14 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorRed">#FF0000</color>
+    <color name="gray_300">#D6DDE1</color>
+    <color name="light_gray">#EEEEFF</color>
+    <color name="neutral_light">#FFFFFF</color>
+    <color name="neutral_dark">#212121</color>
+    <color name="neutral_accent">#2196F3</color>
+    <color name="neutral_separator">#BDBDBD</color>
+    <color name="neutral_medium">#757575</color>
+    <color name="neutral_text">#FFFFFF</color>
+    <color name="neutral_hint">#FFFFFF</color>
+    <color name="neutral_button_bg">#007BFF</color>
 </resources>
