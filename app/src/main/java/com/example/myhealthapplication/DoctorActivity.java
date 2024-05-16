@@ -7,7 +7,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +17,7 @@ public class DoctorActivity extends AppCompatActivity {
 
     ListView doctorListView;
     Button buttonBookAppointment;
-    String doctorType;
+    String  doctorType;
 
     private static final List<String> therapistList = new ArrayList<>();
     private static final List<String> generalPractitionerList = new ArrayList<>();
@@ -26,24 +25,25 @@ public class DoctorActivity extends AppCompatActivity {
     private static final List<String> ophthalmologistList = new ArrayList<>();
     private static final List<String> surgeonList = new ArrayList<>();
 
+    private static final String DOCTOR_NAME_KEY = "doctorName";
+
+
     static {
-        // Заполните списки врачей
-        therapistList.add("Иванов, 10 лет опыта");
-        therapistList.add("Петров, 8 лет опыта");
-        therapistList.add("Сидоров, 7 лет опыта");
-        therapistList.add("Васильев, 6 лет опыта");
-        therapistList.add("Смирнова, 5 лет опыта");
+        initializeDoctorList(therapistList, "Иванов, 10 лет опыта", "Петров, 8 лет опыта", "Сидоров, 7 лет опыта", "Васильев, 6 лет опыта", "Смирнова, 5 лет опыта");
+        initializeDoctorList(generalPractitionerList, therapistList);
+        initializeDoctorList(endocrinologistList, therapistList);
+        initializeDoctorList(ophthalmologistList, therapistList);
+        initializeDoctorList(surgeonList, "Янчев, 10 лет опыта", "Яковлев, 8 лет опыта", "Иванов, 7 лет опыта", "Щелкунов, 6 лет опыта", "Наумов, 5 лет опыта");
+    }
 
-        // Добавьте аналогичные строки для других типов врачей
-        generalPractitionerList.addAll(therapistList);
-        endocrinologistList.addAll(therapistList);
-        ophthalmologistList.addAll(therapistList);
+    private static void initializeDoctorList(List<String> list, String... doctors) {
+        for (String doctor : doctors) {
+            list.add(doctor);
+        }
+    }
 
-        surgeonList.add("Янчев, 10 лет опыта");
-        surgeonList.add("Яковлев, 8 лет опыта");
-        surgeonList.add("Иванов, 7 лет опыта");
-        surgeonList.add("Щелкунов, 6 лет опыта");
-        surgeonList.add("Наумов, 5 лет опыта");
+    private static void initializeDoctorList(List<String> list, List<String> sourceList) {
+        list.addAll(sourceList);
     }
 
     @Override
@@ -63,15 +63,8 @@ public class DoctorActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedDoctor = getDoctorList(doctorType)[position];
-                Toast.makeText(DoctorActivity.this, "Выбран врач: " + selectedDoctor, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        buttonBookAppointment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 Intent intent = new Intent(DoctorActivity.this, SaveAppointmentActivity.class);
-                intent.putExtra("doctorName", doctorType + " " + getDoctorList(doctorType)[0]);
+                intent.putExtra(DOCTOR_NAME_KEY, doctorType + " " + selectedDoctor);
                 startActivity(intent);
             }
         });

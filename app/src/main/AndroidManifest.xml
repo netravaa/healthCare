@@ -24,22 +24,7 @@
             android:name=".SaveAppointmentActivity"
             android:exported="false" />
         <activity
-            android:name=".GeneralPractitionerActivity"
-            android:exported="false" />
-        <activity
             android:name=".DoctorAppointments"
-            android:exported="false" />
-        <activity
-            android:name=".TerapevtActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EndocrinologistActivity"
-            android:exported="false" />
-        <activity
-            android:name=".OphtalmologistActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SurgeonActivity"
             android:exported="false" />
         <activity
             android:name=".RecipesActivity"

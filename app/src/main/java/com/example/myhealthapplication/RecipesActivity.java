@@ -1,9 +1,5 @@
 package com.example.myhealthapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,6 +10,7 @@ public class RecipesActivity extends AppCompatActivity {
 
     EditText notesEditText;
     SharedPreferences sharedPreferences;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,20 +19,18 @@ public class RecipesActivity extends AppCompatActivity {
 
         notesEditText = findViewById(R.id.notesEditText);
 
-        // Получение экземпляра SharedPreferences
+        SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+        username = sharedpreferences.getString("username","").toString();
         sharedPreferences = getSharedPreferences("RecipesNotes", Context.MODE_PRIVATE);
-
-        // Загрузка сохраненных заметок (если есть)
-        String savedNotes = sharedPreferences.getString("notes", "");
+        String savedNotes = sharedPreferences.getString(username, "");
         notesEditText.setText(savedNotes);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        // Сохранение заметок при выходе из активности
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("notes", notesEditText.getText().toString());
+        editor.putString(username, notesEditText.getText().toString());
         editor.apply();
     }
 }

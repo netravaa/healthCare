@@ -75,6 +75,10 @@ public class SaveAppointmentActivity extends AppCompatActivity {
     }
 
     private void saveAppointment() {
+        if (appointmentDateTime == null) {
+            Toast.makeText(this, "Пожалуйста, выберите время приема", Toast.LENGTH_SHORT).show();
+            return;
+        }
         SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
         String username = sharedpreferences.getString("username","").toString();
 
