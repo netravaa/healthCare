@@ -25,15 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
         edEmail = findViewById(R.id.editTextEmail);
         edConfirm = findViewById(R.id.editTextPasswordConfirm);
         btn = findViewById(R.id.buttonRegister);
-        tv = findViewById(R.id.textViewRegistration);
-
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-            }
-        });
-
+        tv = findViewById(R.id.textViewLogin);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+        tv.setOnClickListener(v -> startActivity(new Intent(RegisterActivity.this, LoginActivity.class)));
     }
 
     public static boolean isValid(String passwordhere) {

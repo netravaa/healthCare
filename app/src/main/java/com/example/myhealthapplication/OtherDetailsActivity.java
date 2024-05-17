@@ -2,38 +2,32 @@ package com.example.myhealthapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.Map;
+import java.util.TreeMap;
 public class OtherDetailsActivity extends AppCompatActivity {
 
-    private Button btnClearUserData;
+    private TextView tvUserMail;
+    private TextView tvExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other_details);
-
-        btnClearUserData = findViewById(R.id.btn_clear_user_data);
-
-        btnClearUserData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clearUserData();
-            }
-        });
+        tvUserMail = findViewById(R.id.tv_user_mail);
+        tvExit = findViewById(R.id.tv_exit);
+        SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+        String username = sharedpreferences.getString("username", "").toString();
+        tvUserMail.setText(username);
+        tvExit.setOnClickListener(v -> startActivity(new Intent(OtherDetailsActivity.this, LoginActivity.class)));
     }
 
-    private void clearUserData() {
-        SharedPreferences sharedPreferences = getSharedPreferences("MyAppointments", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear();
-        editor.apply();
-        Intent intent = new Intent(OtherDetailsActivity.this, HomeActivity.class);
-        startActivity(intent);
-        finish();
-    }
 }

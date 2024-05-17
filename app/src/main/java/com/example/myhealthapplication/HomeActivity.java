@@ -21,16 +21,6 @@ public class HomeActivity extends AppCompatActivity {
         String username = sharedpreferences.getString("username","").toString();
         Toast.makeText(getApplicationContext(), "Приветствуем " +username, Toast.LENGTH_SHORT).show();
 
-        CardView exit = findViewById(R.id.cardExit);
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.clear();
-                editor.apply();
-                startActivity(new Intent(HomeActivity.this, LoginActivity.class));
-            }
-        });
 
         CardView findDoctor = findViewById(R.id.cardFindDoctor);
         findDoctor.setOnClickListener(new View.OnClickListener() {

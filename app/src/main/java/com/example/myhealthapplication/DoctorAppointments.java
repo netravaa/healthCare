@@ -48,8 +48,11 @@ public class DoctorAppointments extends AppCompatActivity {
             tvAppointmentInfo.setText("Вы не записаны к врачу");
         } else {
             StringBuilder sb = new StringBuilder();
+            int count = 0;
             for (String appointmentInfo : recentAppointments.values()) {
+                if (count >= 9) break;
                 sb.append(appointmentInfo).append("\n\n");
+                count++;
             }
             tvAppointmentInfo.setText(sb.toString());
         }

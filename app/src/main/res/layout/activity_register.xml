@@ -104,19 +104,20 @@
         android:layout_width="291dp"
         android:layout_height="58dp"
         android:layout_marginTop="44dp"
-        android:text="Зарегистироваться"
+        android:text="Зарегистрироваться"
         android:textSize="24sp"
+        android:background="@drawable/button_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPasswordConfirm" />
 
     <TextView
-        android:id="@+id/textViewRegister"
+        android:id="@+id/textViewLogin"
         android:layout_width="252dp"
         android:layout_height="30dp"
         android:layout_marginTop="44dp"
-        android:hint="register"
+        android:hint="login"
         android:text="Уже есть аккаунт? Войти"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"

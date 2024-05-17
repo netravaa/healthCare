@@ -15,10 +15,13 @@
         android:theme="@style/Theme.MyHealthApplication"
         tools:targetApi="31">
         <activity
-            android:name=".DoctorActivity"
+            android:name=".OtherDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".OtherDetailsActivity"
+            android:name=".DateTimePickerDialog"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorActivity"
             android:exported="false" />
         <activity
             android:name=".SaveAppointmentActivity"
