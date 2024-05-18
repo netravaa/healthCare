@@ -44,6 +44,13 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, OtherDetailsActivity.class));
             }
         });
+        CardView cardHelp = findViewById(R.id.cardHelp);
+        cardHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, HelpActivity.class));
+            }
+        });
 
     }
 }

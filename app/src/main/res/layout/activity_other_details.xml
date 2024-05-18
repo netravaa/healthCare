@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01">
+        app:layout_constraintVertical_bias="0.010">
 
         <TextView
             android:id="@+id/tv_user_mail"
@@ -35,9 +35,98 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.cardview.widget.CardView>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="14dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.150">
+
+        <TextView
+            android:id="@+id/tv_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/notification"
+            android:drawablePadding="5dp"
+            android:padding="16dp"
+            android:text="Уведомления"
+            android:textColor="@color/neutral_dark"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:layout_width="335dp"
+            android:layout_height="1dp"
+            android:layout_margin="50dp"
+            android:background="@color/neutral_separator" />
+        <TextView
+            android:id="@+id/tvSettingNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/notification_setting"
+            android:drawablePadding="5dp"
+            android:layout_marginTop="50dp"
+            android:padding="16dp"
+            android:text="Настройки уведомлений"
+            android:textColor="@color/neutral_dark"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="14dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.350">
+
+        <TextView
+            android:id="@+id/tvSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/lock"
+            android:drawablePadding="5dp"
+            android:padding="16dp"
+            android:text="Настройки входа"
+            android:textColor="@color/neutral_dark"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:layout_width="335dp"
+            android:layout_height="1dp"
+            android:layout_margin="50dp"
+            android:background="@color/neutral_separator" />
+        <TextView
+            android:id="@+id/tvSettingSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/cloud"
+            android:drawablePadding="5dp"
+            android:layout_marginTop="50dp"
+            android:padding="16dp"
+            android:text="Настройки отправки данных"
+            android:textColor="@color/neutral_dark"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:layout_margin="14dp"
@@ -45,10 +134,10 @@
         app:cardCornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.160">
+        app:layout_constraintVertical_bias="0.600">
 
         <TextView
             android:layout_width="wrap_content"
@@ -75,8 +164,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <View
-            android:layout_width="317dp"
-            android:layout_height="2dp"
+            android:layout_width="320dp"
+            android:layout_height="1dp"
             android:layout_margin="65dp"
             android:background="@color/neutral_separator" />
         <TextView
@@ -106,7 +195,52 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/cardView5"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_margin="14dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.850">
+
+        <TextView
+            android:id="@+id/tv_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/mail"
+            android:drawablePadding="5dp"
+            android:padding="16dp"
+            android:text="Написать в техподдержку"
+            android:textColor="@color/neutral_dark"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:layout_width="330dp"
+            android:layout_height="1dp"
+            android:layout_margin="55dp"
+            android:background="@color/neutral_separator"/>
+        <TextView
+            android:id="@+id/tv_idea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/lamp"
+            android:drawablePadding="5dp"
+            android:layout_marginTop="58dp"
+            android:padding="16dp"
+            android:text="Предложить идею"
+            android:textColor="@color/neutral_dark"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView6"
         android:layout_width="250dp"
         android:layout_height="30dp"
         android:layout_margin="14dp"

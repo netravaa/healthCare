@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MyHealthApplication"
         tools:targetApi="31">
         <activity
+            android:name=".HelpActivity"
+            android:exported="false" />
+        <activity
             android:name=".OtherDetailsActivity"
             android:exported="false" />
         <activity

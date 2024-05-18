@@ -21,4 +21,5 @@
     <color name="neutral_text">#FFFFFF</color>
     <color name="neutral_hint">#FFFFFF</color>
     <color name="neutral_button_bg">#007BFF</color>
+    <color name="test">#C9C9C9</color>
 </resources>
