@@ -26,7 +26,6 @@ public class RegisterActivity extends AppCompatActivity {
         edConfirm = findViewById(R.id.editTextPasswordConfirm);
         btn = findViewById(R.id.buttonRegister);
         tv = findViewById(R.id.textViewLogin);
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,8 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Заполните все пункты", Toast.LENGTH_SHORT).show();
                 } else {
                     if (password.compareTo(confirm) == 0) {
-                        String passwordValidationMessage = getPasswordValidationMessage(password);
-                        if (passwordValidationMessage.isEmpty()) {
+                        if (isValid(password)) {
                             db.register(email, password, new Database.RegisterCallback() {
                                 @Override
                                 public void onSuccess() {
@@ -54,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
                             });
                         } else {
-                            Toast.makeText(getApplicationContext(), passwordValidationMessage, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Пароль должен содержать как минимум 8 символов, букву, цифру и специальный символ", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Toast.makeText(getApplicationContext(), "Пароли не совпадают", Toast.LENGTH_SHORT).show();
@@ -62,40 +60,31 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
-
         tv.setOnClickListener(v -> startActivity(new Intent(RegisterActivity.this, LoginActivity.class)));
     }
 
-    public static String getPasswordValidationMessage(String password) {
-        if (password.length() < 8) {
-            return "Пароль должен быть не менее 8 символов";
-        }
-
-        boolean hasLetter = false;
-        boolean hasDigit = false;
-        boolean hasSpecialChar = false;
-
-        for (int i = 0; i < password.length(); i++) {
-            char c = password.charAt(i);
-            if (Character.isLetter(c)) {
-                hasLetter = true;
-            } else if (Character.isDigit(c)) {
-                hasDigit = true;
-            } else if (c >= 33 && c <= 46 || c == 64) {
-                hasSpecialChar = true;
+    public static boolean isValid(String passwordhere) {
+        int f1 = 0, f2 = 0, f3 = 0;
+        if (passwordhere.length() < 8) {
+            return false;
+        } else {
+            for (int p = 0; p < passwordhere.length(); p++) {
+                if (Character.isLetter(passwordhere.charAt(p))) {
+                    f1 = 1;
+                }
             }
+            for (int r = 0; r < passwordhere.length(); r++) {
+                if (Character.isDigit(passwordhere.charAt(r))) {
+                    f2 = 1;
+                }
+            }
+            for (int s = 0; s < passwordhere.length(); s++) {
+                char c = passwordhere.charAt(s);
+                if (c >= 33 && c <= 46 || c == 64) {
+                    f3 = 1;
+                }
+            }
+            return f1 == 1 && f2 == 1 && f3 == 1;
         }
-
-        if (!hasLetter) {
-            return "Пароль должен содержать хотя бы одну букву";
-        }
-        if (!hasDigit) {
-            return "Пароль должен содержать хотя бы одну цифру";
-        }
-        if (!hasSpecialChar) {
-            return "Пароль должен содержать хотя бы один специальный символ";
-        }
-
-        return "";
     }
 }
