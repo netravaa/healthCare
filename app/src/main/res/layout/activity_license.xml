@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="12dp"
-        android:text="Лицензионное соглашение"
+        android:text="Пользовательское соглашение"
         android:textColor="@color/neutral_dark"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +25,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Лицензионное соглашение"
+        android:text="Пользовательское соглашение"
         android:textColor="@color/neutral_dark"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -38,7 +38,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Лицензионное соглашение будет написано, когда приложение увидит свет"
+        android:text="Как только приложение выйдет в свет,\nто пользовательское соглашение вместе с ним"
         android:textColor="@color/neutral_dark"
         android:gravity="center"
         android:textSize="16sp"

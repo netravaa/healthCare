@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="12dp"
-        android:text="Политика безопасности"
+        android:text="Политика информационной безопасности"
         android:textColor="@color/neutral_dark"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,7 +38,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Политика безопасности проста/n- не верьте интернету"
+        android:text="Как только приложение выйдет в свет,\n то политика безопасности вместе с ним"
         android:textColor="@color/neutral_dark"
         android:gravity="center"
         android:textSize="16sp"
