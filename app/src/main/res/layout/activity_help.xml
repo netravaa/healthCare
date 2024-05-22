@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="190dp"
             android:layout_marginLeft="5dp"
-            android:text="HealthCare — Единая медицинская\nинформационно-аналитическая система.\nПриложение HealthCare позволяет\nнаселению записываться к врачам\nи просматривать документы."
+            android:text="HealthCare — Единая медицинская\nинформационно-аналитическая система.\nПриложение HealthCare позволяет\nнаселению записываться к врачам\n в городские поликлиники и просматривать документы."
             android:textColor="@color/neutral_dark"
             android:textSize="18sp"
             android:textStyle="normal"

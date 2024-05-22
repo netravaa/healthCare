@@ -103,7 +103,7 @@ public class SaveAppointmentActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyAppointments", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(username + "_appointment_" + tvDoctorName.getText().toString() + "_" + formattedDateTime, appointmentInfo);
+        editor.putString(username + "_appointment_" + formattedDateTime, appointmentInfo);
         editor.apply();
 
         Toast.makeText(this, "Запись сохранена", Toast.LENGTH_SHORT).show();
